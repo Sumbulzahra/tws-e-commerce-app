@@ -10,7 +10,7 @@ COPY package*.json ./
 
 # Set Node memory limit and install dependencies
 ENV NODE_OPTIONS=--max-old-space-size=2048
-RUN npm ci
+RUN npm ci --audit=false
 
 # Copy all project files
 COPY . .
