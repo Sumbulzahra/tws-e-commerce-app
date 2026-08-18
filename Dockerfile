@@ -9,7 +9,7 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Install dependencies
-RUN NODE_OPTIONS="--max-old-space-options=2048" npm ci
+RUN node --max-old-space-options=2048 $(which npm) ci
 
 # Copy all project files
 COPY . .
