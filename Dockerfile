@@ -1,6 +1,5 @@
 # Stage 1: Development/Build Stage
 FROM node:18-alpine AS builder
-ENV NODE_OPTIONS="--max-old-space-options=2048"
 WORKDIR /app
 
 # Install necessary build dependencies
@@ -10,7 +9,7 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN NODE_OPTIONS="--max-old-space-options=2048" npm ci
 
 # Copy all project files
 COPY . .
