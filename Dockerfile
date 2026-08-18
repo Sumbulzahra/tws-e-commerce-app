@@ -1,6 +1,6 @@
 # Stage 1: Development/Build Stage
 FROM node:18-alpine AS builder
-ENV NODE_OPTIONS=--max-old-space-options=2048
+ENV NODE_OPTIONS="--max-old-space-options=2048"
 WORKDIR /app
 
 # Install necessary build dependencies
